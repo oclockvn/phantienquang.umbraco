@@ -2,6 +2,7 @@ $preview_color_border: #eee;
 $preview_color_text: #aaa;
 $readmore_transfrom: 32px;
 $preview_color_hover: #f42;
+$paging_size: 32px;
 
 .post-container {
     border-right: 1px solid $preview_color_border;
@@ -114,7 +115,7 @@ $preview_color_hover: #f42;
 
     a {
         color: $preview_color_text;
-        
+
         &:hover {
             color: $preview_color_hover;
         }
@@ -136,3 +137,46 @@ $preview_color_hover: #f42;
     }
     */
 }
+
+.preview-paging {
+    border-top: 1px solid #eee;
+    padding: 32px;
+  }
+  
+  .paging {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        display: block;
+        
+        width: $paging_size;
+        height: $paging_size;
+        line-height: $paging_size;
+        text-align: center;
+        background: #efefef;
+        color: #000;
+        border-radius: 2px;
+        transition: .25s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .3);
+          }
+      }
+
+      li {
+        display: block;
+        width: $paging_size;
+        height: $paging_size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        + li {
+            margin-left: 8px;
+          }
+      }
+  }

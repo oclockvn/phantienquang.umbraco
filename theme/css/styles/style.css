@@ -355,6 +355,38 @@ img {
     .preview a:hover {
       color: #f42; }
 
+.preview-paging {
+  border-top: 1px solid #eee;
+  padding: 32px; }
+
+.paging {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .paging a {
+    display: block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background: #efefef;
+    color: #000;
+    border-radius: 2px;
+    transition: .25s ease-in-out; }
+    .paging a:hover {
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3); }
+  .paging li {
+    display: block;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; }
+    .paging li + li {
+      margin-left: 8px; }
+
 .widget {
   margin: 32px; }
   .widget .widget-title {
