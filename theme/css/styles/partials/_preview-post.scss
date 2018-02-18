@@ -1,6 +1,7 @@
 $preview_color_border: #eee;
 $preview_color_text: #aaa;
 $readmore_transfrom: 32px;
+$preview_color_hover: #f42;
 
 .post-container {
     border-right: 1px solid $preview_color_border;
@@ -27,6 +28,7 @@ $readmore_transfrom: 32px;
         display: flex;
         align-items: center;
         margin: 8px 0;
+        color: $preview_color_text;
     }
     // meta
 
@@ -38,6 +40,7 @@ $readmore_transfrom: 32px;
         a {
             display: flex;
             align-items: center;
+            color: $preview_color_text;
         }    
     }
     // author
@@ -64,6 +67,7 @@ $readmore_transfrom: 32px;
             transition: .25s linear;
         }
         
+        /*
         .readmore {
             white-space: nowrap;
             display: block;
@@ -105,8 +109,18 @@ $readmore_transfrom: 32px;
                 }
             }
         }
+        */
     }
 
+    a {
+        color: $preview_color_text;
+        
+        &:hover {
+            color: $preview_color_hover;
+        }
+    }
+
+    /*
     &:hover {
         .readmore {
             visibility: visible;
@@ -120,4 +134,5 @@ $readmore_transfrom: 32px;
             opacity: .3;
         }
     }
+    */
 }
