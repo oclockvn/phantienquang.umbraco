@@ -1,0 +1,50 @@
+$preview_color_border: #eee;
+$preview_color_text: #aaa;
+
+.post-container {
+    border-right: 1px solid $preview_color_border;
+}
+
+.preview {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    + .preview {
+        border-top: 1px solid $preview_color_border;
+    }
+
+    .preview-title {
+        font-weight: 600;
+    }
+    // title
+
+    .preview-meta {
+        display: flex;
+        align-items: center;
+    }
+    // meta
+
+    .writer {
+        img {
+            max-width: 32px;
+        }
+    
+        a {
+            display: flex;
+            align-items: center;
+        }    
+    }
+    // author
+
+    .preview-tags {
+        a {
+            display: inline-block;
+            color: $preview_color_text;
+    
+            + a {
+                margin-left: 4px;
+            }
+        }
+    }
+    // tags
+}
