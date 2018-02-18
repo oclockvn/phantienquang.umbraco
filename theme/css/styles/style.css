@@ -366,10 +366,45 @@ img {
   background: #efefef;
   padding: 2px 8px;
   margin: 0 2px 4px 0;
-  transition: .2s ease-in-out; }
+  transition: .2s ease-in-out;
+  border-radius: 2px; }
   .tags a:hover {
     box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.14), 0 16px 24px 2px rgba(0, 0, 0, 0.098), 0 6px 30px 5px rgba(0, 0, 0, 0.084);
     background-color: #fff;
     color: #f42; }
+
+.popular-posts {
+  counter-reset: pp; }
+
+.popular-post {
+  padding-left: 40px;
+  position: relative; }
+  .popular-post a {
+    color: #000;
+    font-size: 1rem; }
+    .popular-post a:hover {
+      color: #f42; }
+  .popular-post + .popular-post {
+    margin-top: 16px; }
+  .popular-post .pp-meta {
+    font-size: .9em;
+    color: #aaa; }
+  .popular-post .pp-title {
+    margin-bottom: 4px; }
+  .popular-post:before {
+    counter-increment: pp;
+    content: counter(pp);
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    display: block;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #efefef;
+    color: #000;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2); }
 
 /*# sourceMappingURL=style.css.map */
