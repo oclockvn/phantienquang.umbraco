@@ -1,5 +1,6 @@
 $preview_color_border: #eee;
 $preview_color_text: #aaa;
+$readmore_transfrom: 32px;
 
 .post-container {
     border-right: 1px solid $preview_color_border;
@@ -15,12 +16,17 @@ $preview_color_text: #aaa;
 
     .preview-title {
         font-weight: 600;
+
+        a {
+            color: #000;
+        }
     }
     // title
 
     .preview-meta {
         display: flex;
         align-items: center;
+        margin: 8px 0;
     }
     // meta
 
@@ -47,4 +53,71 @@ $preview_color_text: #aaa;
         }
     }
     // tags
+
+    .preview-right {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        .excerpt {
+            flex: 1;
+            transition: .25s linear;
+        }
+        
+        .readmore {
+            white-space: nowrap;
+            display: block;
+            color: #000;
+            border: 2px solid #000;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transform: translateX(-$readmore_transfrom);
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            transition: .5s linear;
+            background: #fff;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: #000;
+                transition: .5s ease-in-out;
+                transform: scale(0, 1);
+                transform-origin: left;
+                z-index: -1;
+            }
+
+            &:hover {
+                color: #fff;    
+
+                &:after {
+                    transform: scale(1, 1);
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .readmore {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .excerpt {
+            transform: translateX($readmore_transfrom);
+            color: $preview_color_text;
+            opacity: .3;
+        }
+    }
 }
