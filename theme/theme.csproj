@@ -66,7 +66,59 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="font\roboto\Roboto-Bold.eot" />
+    <Content Include="font\roboto\Roboto-Bold.ttf" />
+    <Content Include="font\roboto\Roboto-Bold.woff" />
+    <Content Include="font\roboto\Roboto-Bold.woff2" />
+    <Content Include="font\roboto\Roboto-Light.eot" />
+    <Content Include="font\roboto\Roboto-Light.ttf" />
+    <Content Include="font\roboto\Roboto-Light.woff" />
+    <Content Include="font\roboto\Roboto-Light.woff2" />
+    <Content Include="font\roboto\Roboto-Medium.eot" />
+    <Content Include="font\roboto\Roboto-Medium.ttf" />
+    <Content Include="font\roboto\Roboto-Medium.woff" />
+    <Content Include="font\roboto\Roboto-Medium.woff2" />
+    <Content Include="font\roboto\Roboto-Regular.eot" />
+    <Content Include="font\roboto\Roboto-Regular.ttf" />
+    <Content Include="font\roboto\Roboto-Regular.woff" />
+    <Content Include="font\roboto\Roboto-Regular.woff2" />
+    <Content Include="font\roboto\Roboto-Thin.eot" />
+    <Content Include="font\roboto\Roboto-Thin.ttf" />
+    <Content Include="font\roboto\Roboto-Thin.woff" />
+    <Content Include="font\roboto\Roboto-Thin.woff2" />
     <None Include="packages.config" />
+    <Content Include="sass\mdb.scss" />
+    <Content Include="sass\mdb\free\data\_colors.scss" />
+    <Content Include="sass\mdb\free\data\_functions.scss" />
+    <Content Include="sass\mdb\free\data\_mixins.scss" />
+    <Content Include="sass\mdb\free\data\_prefixer.scss" />
+    <Content Include="sass\mdb\free\data\_variables-b4.scss" />
+    <Content Include="sass\mdb\free\data\_variables.scss" />
+    <Content Include="sass\mdb\free\_animations.scss" />
+    <Content Include="sass\mdb\free\_badge.scss" />
+    <Content Include="sass\mdb\free\_breadcrumb.scss" />
+    <Content Include="sass\mdb\free\_buttons.scss" />
+    <Content Include="sass\mdb\free\_cards-basic.scss" />
+    <Content Include="sass\mdb\free\_carousel-basic.scss" />
+    <Content Include="sass\mdb\free\_collapse.scss" />
+    <Content Include="sass\mdb\free\_deprecated.scss" />
+    <Content Include="sass\mdb\free\_dropdowns.scss" />
+    <Content Include="sass\mdb\free\_footer.scss" />
+    <Content Include="sass\mdb\free\_forms-basic.scss" />
+    <Content Include="sass\mdb\free\_global.scss" />
+    <Content Include="sass\mdb\free\_helpers.scss" />
+    <Content Include="sass\mdb\free\_jumbotron.scss" />
+    <Content Include="sass\mdb\free\_list-group.scss" />
+    <Content Include="sass\mdb\free\_masks.scss" />
+    <Content Include="sass\mdb\free\_modals.scss" />
+    <Content Include="sass\mdb\free\_msc.scss" />
+    <Content Include="sass\mdb\free\_navbar.scss" />
+    <Content Include="sass\mdb\free\_pagination.scss" />
+    <Content Include="sass\mdb\free\_progress.scss" />
+    <Content Include="sass\mdb\free\_tables.scss" />
+    <Content Include="sass\mdb\free\_typography.scss" />
+    <Content Include="sass\mdb\free\_waves.scss" />
+    <Content Include="sass\mdb\_custom.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,6 +127,32 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\mdb.css" />
+    <Content Include="css\mdb.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="img\lightbox\default-skin.png" />
+    <Content Include="img\lightbox\default-skin.svg" />
+    <Content Include="img\lightbox\preloader.gif" />
+    <Content Include="img\overlays\01.png" />
+    <Content Include="img\overlays\02.png" />
+    <Content Include="img\overlays\03.png" />
+    <Content Include="img\overlays\04.png" />
+    <Content Include="img\overlays\05.png" />
+    <Content Include="img\overlays\06.png" />
+    <Content Include="img\overlays\07.png" />
+    <Content Include="img\overlays\08.png" />
+    <Content Include="img\overlays\09.png" />
+    <Content Include="img\svg\arrow_left.svg" />
+    <Content Include="img\svg\arrow_right.svg" />
+    <Content Include="index.html" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\mdb.js" />
+    <Content Include="js\mdb.min.js" />
+    <Content Include="js\popper.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
