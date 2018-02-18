@@ -1,0 +1,35 @@
+$tag_color: #aaa;
+$tag_bg: #efefef;
+$tag_color_hover: #f42;
+$tag_bg_hover: #fff;
+
+.widget {  
+    margin: 32px;
+
+    .widget-title {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 1.5em;
+      }
+}
+
+.tags {
+    a {
+        font-size: .9em;
+        color: $tag_color;
+        display: inline-block;
+        border: 1px solid;
+        border: none;
+        background: $tag_bg;
+        padding: 2px 8px;
+        margin: 0 2px 4px 0;
+        transition: .2s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 8px 10px -5px rgba(0,0,0,.14), 0 16px 24px 2px rgba(0,0,0,.098), 0 6px 30px 5px rgba(0,0,0,.084);
+            background-color: $tag_bg_hover;
+            color: $tag_color_hover;  
+          }
+      }
+}
