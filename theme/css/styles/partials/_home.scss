@@ -1,0 +1,11 @@
+$md: 992px;
+
+.sidebar {
+    &.fixed {
+        @media screen and (min-width: $md) {
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+    }
+}
