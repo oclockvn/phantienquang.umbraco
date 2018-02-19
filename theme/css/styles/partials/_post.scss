@@ -40,6 +40,15 @@ $post_color: #f42;
         display: inline-block;
         margin: auto;
         max-width: 100%;
+        border: 1px solid #eee;
+        padding: 4px;
+        background: #eee;
+        border-radius: 3px;    
+        transition: .25s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 3px 9px 0 rgba(0,0,0,.3);
+        }
     }
 
     blockquote p {

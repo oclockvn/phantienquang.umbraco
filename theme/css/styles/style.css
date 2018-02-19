@@ -506,7 +506,14 @@ img {
 .page__content img {
   display: inline-block;
   margin: auto;
-  max-width: 100%; }
+  max-width: 100%;
+  border: 1px solid #eee;
+  padding: 4px;
+  background: #eee;
+  border-radius: 3px;
+  transition: .25s ease-in-out; }
+  .page__content img:hover {
+    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.3); }
 .page__content blockquote p {
   font-size: 1em; }
 
