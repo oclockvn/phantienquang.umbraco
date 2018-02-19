@@ -1,39 +1,41 @@
 ﻿@using blog.Models
 @model PreviewPostViewModel
 
+@{ 
+    var baseInfo = Model.BaseInfo;
+}
+
 <div class="preview container-fluid">
     <div class="row max-size">
         <div class="col-md-6 preview-left">
             <div class="preview-tags">
-                @foreach (var tag in Model.BaseInfo.Tags)
-                {
-                    <a href="#">#@tag</a>
-                }
+                @ViewHelpers.RenderTags(baseInfo.Tags)
             </div>
             <h3 class="preview-title">
-                <a href="@Model.Url" title="@Model.BaseInfo.PageTitle">@Model.BaseInfo.PageTitle</a>
+                <a href="@baseInfo.Url" title="@Model.BaseInfo.PageTitle">@Model.BaseInfo.PageTitle</a>
             </h3>
             <div class="preview-meta">
-                <div class="align-items-center mr- no-gutters row writer">
+                @*<div class="align-items-center mr- no-gutters row writer">
                     <a href="#">
-                        <img src="img/user.png" alt="@Model.Author" class="mr-">
+                        <img src="img/user.png" alt="@baseInfo.Author" class="mr-">
                     </a>
                     <span class="mr-">by</span>
                     <a href="#">
-                        <span>@Model.Author</span>
+                        <span>@baseInfo.Author</span>
                     </a>
                 </div>
                 <div class="published">
                     <span>—</span>
-                    <time datetime="@Model.CreatedDate" class="timeago"></time>
-                </div>
+                    <time datetime="@baseInfo.CreatedDate" class="timeago"></time>
+                </div>*@
+                @ViewHelpers.RenderPostMeta(baseInfo)
             </div>
         </div>
         <div class="col-md-6 preview-right align-self-center">
             <!-- <a href="#" class="readmore">read more</a> -->
             <p class="excerpt">
                 @Model.Excerpt
-                <a href="@Model.Url" class="ml" title="read more">[...]</a>
+                <a href="@baseInfo.Url" class="ml" title="read more">[...]</a>
             </p>
         </div>
     </div>

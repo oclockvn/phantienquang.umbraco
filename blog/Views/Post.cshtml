@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using blog.Models
+@using Our.Umbraco.Ditto
+
+@{
+    Layout = "Master.cshtml";
+
+    var content = Model.Content.As<PostViewModel>();
+    var baseInfo = content.BaseInfo;
+}
+
+<!-- post -->
+<div class="post-container">
+    <div class="container post-header-container preview">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="preview-tags">
+                    @ViewHelpers.RenderTags(baseInfo.Tags)
+                </div>
+                <h1 class="preview-title">@baseInfo.PageTitle</h1>
+                <div class="preview-meta row align-items-center no-gutters">
+                    @ViewHelpers.RenderPostMeta(baseInfo)
+                </div>
+            </div>
+            <!-- //header -->
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="page__content">
+                    @Html.Raw(content.BodyText)
+                </div>
+                <!-- //content -->
+            </div>
+        </div>
+    </div>
+
+</div>
+

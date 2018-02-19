@@ -24,16 +24,9 @@ namespace blog.Models
     {
         [CurrentContentAs]
         public BaseViewModel BaseInfo { get; set; }
-
-        public string Url { get; set; }
+        
         //public virtual IEnumerable<string> Tags { get; set; }
         //public string Title { get; set; }
         public string Excerpt { get; set; }
-
-        [UmbracoProperty("CreatorName")]
-        public string Author { get; set; }
-
-        [UmbracoProperty("CreateDate")]
-        public string CreatedDate { get; set; }
     }
 }
