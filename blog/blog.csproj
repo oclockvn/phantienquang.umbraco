@@ -266,6 +266,43 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\lumx.css" />
+    <Content Include="Content\mdb.css" />
+    <Content Include="Content\mdb.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\styles\common.css" />
+    <Content Include="Content\styles\style.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\lightbox\default-skin.png" />
+    <Content Include="img\lightbox\default-skin.svg" />
+    <Content Include="img\lightbox\preloader.gif" />
+    <Content Include="img\overlays\01.png" />
+    <Content Include="img\overlays\02.png" />
+    <Content Include="img\overlays\03.png" />
+    <Content Include="img\overlays\04.png" />
+    <Content Include="img\overlays\05.png" />
+    <Content Include="img\overlays\06.png" />
+    <Content Include="img\overlays\07.png" />
+    <Content Include="img\overlays\08.png" />
+    <Content Include="img\overlays\09.png" />
+    <Content Include="img\svg\arrow_left.svg" />
+    <Content Include="img\svg\arrow_right.svg" />
+    <Content Include="img\user.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\mdb.js" />
+    <Content Include="Scripts\mdb.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\noframework.waypoints.min.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\trees.config" />
@@ -285,6 +322,51 @@
     <Content Include="config\BackOfficeTours\getting-started.json" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
+    <Content Include="Content\styles\common.css.map" />
+    <Content Include="Content\styles\common.scss" />
+    <Content Include="Content\styles\modules\_buttons.scss" />
+    <Content Include="Content\styles\modules\_index.scss" />
+    <Content Include="Content\styles\modules\_keyframes.scss" />
+    <Content Include="Content\styles\modules\_select.scss" />
+    <Content Include="Content\styles\modules\_table.scss" />
+    <Content Include="Content\styles\partials\_footer.scss" />
+    <Content Include="Content\styles\partials\_header.scss" />
+    <Content Include="Content\styles\partials\_heartbeat.scss" />
+    <Content Include="Content\styles\partials\_home.scss" />
+    <Content Include="Content\styles\partials\_index.scss" />
+    <Content Include="Content\styles\partials\_intro.scss" />
+    <Content Include="Content\styles\partials\_popular-post.scss" />
+    <Content Include="Content\styles\partials\_post.scss" />
+    <Content Include="Content\styles\partials\_preview-post.scss" />
+    <Content Include="Content\styles\partials\_tags.scss" />
+    <Content Include="Content\styles\setting\_index.scss" />
+    <Content Include="Content\styles\setting\_layout.scss" />
+    <Content Include="Content\styles\setting\_variables.scss" />
+    <Content Include="Content\styles\style.css.map" />
+    <Content Include="Content\styles\style.scss" />
+    <Content Include="font\roboto\Roboto-Bold.eot" />
+    <Content Include="font\roboto\Roboto-Bold.ttf" />
+    <Content Include="font\roboto\Roboto-Bold.woff" />
+    <Content Include="font\roboto\Roboto-Bold.woff2" />
+    <Content Include="font\roboto\Roboto-Light.eot" />
+    <Content Include="font\roboto\Roboto-Light.ttf" />
+    <Content Include="font\roboto\Roboto-Light.woff" />
+    <Content Include="font\roboto\Roboto-Light.woff2" />
+    <Content Include="font\roboto\Roboto-Medium.eot" />
+    <Content Include="font\roboto\Roboto-Medium.ttf" />
+    <Content Include="font\roboto\Roboto-Medium.woff" />
+    <Content Include="font\roboto\Roboto-Medium.woff2" />
+    <Content Include="font\roboto\Roboto-Regular.eot" />
+    <Content Include="font\roboto\Roboto-Regular.ttf" />
+    <Content Include="font\roboto\Roboto-Regular.woff" />
+    <Content Include="font\roboto\Roboto-Regular.woff2" />
+    <Content Include="font\roboto\Roboto-Thin.eot" />
+    <Content Include="font\roboto\Roboto-Thin.ttf" />
+    <Content Include="font\roboto\Roboto-Thin.woff" />
+    <Content Include="font\roboto\Roboto-Thin.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -297,6 +379,11 @@
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
+    <Content Include="Views\Master.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -338,6 +425,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
