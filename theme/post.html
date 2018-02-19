@@ -62,9 +62,141 @@
 
         <!-- post -->
         <div class="post-container">
-            
+            <div class="container post-header-container preview">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="preview-tags">
+                            <a href="#">#lorem</a>
+                            <a href="#">#ipsum</a>
+                            <a href="#">#dolor</a>
+                        </div>
+                        <h1 class="preview-title">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga eius ipsam quis, veniam ipsum laudantium ratione
+                        </h1>
+                        <div class="preview-meta row align-items-center no-gutters">
+                            <div class="align-items-center mr- no-gutters row writer">
+                                <a href="#">
+                                    <img src="img/user.png" alt="writer" class="mr-">
+                                </a>
+                                <span class="mr-">by</span>
+                                <a href="#">
+                                    <span>Tien Quang</span>
+                                </a>
+                            </div>
+                            <div class="published">
+                                <span>—</span>
+                                <time time="">2 days ago</time>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //header -->
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="page__content">
+                            <p>Nội dung bài viết này tập trung vào việc xây dựng UI cho ứng dụng. Không có kỹ thuật gì mới,
+                                chủ yếu là sử dụng html/css để build lên layout. Bạn chỉ cần 1 chút kỹ năng front-end cho
+                                bài này. Nếu bạn đã biết (ý mình là rành) về front-end thì bạn có thể tham khảo để xem style
+                                của mình, còn nếu chưa rành, bạn cũng có thể tự mình gõ theo từng dòng code mình quay trong
+                                clip để học hỏi.</p>
+                            <h3>Chuẩn bị</h3>
+                            <p>Như
+                                <a href="http://phantienquang.com/2016/12/8/aspnet-mvc-5-p3-doi-chut-ve-extension-method-aspnet-mvc-helpers">bài trước</a> đã đề cập, nếu bạn muốn làm theo những hướng dẫn của mình trong bài này thì
+                                bạn phải cài đặt
+                                <a href="https://nodejs.org/en/">nodejs</a>.</p>
+                            <p>Sau khi cài đặt nodejs, bạn có thể sử dụng npm để cài đặt các packages cho việc run task thông
+                                qua gulp:</p>
+                            <p>Các packages dùng cho styles: (js và images sẽ đề cập sau)</p>
+                            <p>0.
+                                <a href="http://gulpjs.com/">gulp</a> là 1 task runner. Hiểu đơn giản là nó là tool giúp bạn thực hiện các việc (task)
+                                compile scss, concat, uglify js....</p>
+                            <ol>
+                                <li>
+                                    <a href="https://github.com/sindresorhus/gulp-ruby-sass">gulp-ruby-sass</a> dùng để compile *.scss thành *.css. Nếu bạn chưa biết scss thì có
+                                    thể tham khảo bài viết trên blog cũ của mình
+                                    <a href="http://phantienquang.blogspot.com/2015/09/huong-dan-su-dung-css-preprocessor.html">tại đây</a>.</li>
+                                <li>
+                                    <a href="https://github.com/postcss/gulp-postcss">gulp-postcss + autoprefixer</a>: parse css, thêm vender-prefix...</li>
+                                <li>
+                                    <a href="https://github.com/mikaelbr/gulp-notify">gulp-notify</a>: notify message sau khi hoàn thành task. Có thể cài đặt hoặc không.</li>
+                            </ol>
+                            <p>Xem clip ở cuối bài viết.</p>
+                            <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/mPtx8Xjhi1E" frameborder="0" allowfullscreen></iframe>-->
+                            <p>Lưu ý: nếu bạn chưa cài git và không có git bash, bạn hoàn toàn có thể làm tương tự với cmd như
+                                trong video. Nhớ trỏ về cùng thư mục hoặc có thể bấm
+                                <kbd>Shift</kbd> + R-click và chọn
+                                <code>Open command window here</code>.</p>
+                            <blockquote>
+                                <p>github repo:
+                                    <a href="https://github.com/oclockvn/didongexpress">didongexpress</a>
+                                </p>
+                            </blockquote>
+                            <blockquote>
+                                <p>Nếu bạn thấy sử dụng gulp là quá bất tiện cho việc compile scss, add vender prefix.. thì
+                                    bạn bạn có thể sử dụng
+                                    <a href="http://codepen.io/">codepen</a> như 1 tool để thực hiện các việc đó.</p>
+                            </blockquote>
+                            <h3>Videos</h3>
+                            <p>Trong suốt playlist là các video thực hiện phần giao diện của website. Ở đây mình không copy
+                                cấu trúc (html structure) như của website gốc mà tự viết riêng để các bạn áp dụng bootstrap
+                                vào 1 responsive webapp (responsive styles sẽ được cập nhật sau). Không có gì mới trong các
+                                video này nên nếu bạn không muốn xem về front-end thì có thể bỏ qua.</p>
+                            <p>Nhắc lại 1 số khái niệm/kỹ thuật đã áp dụng trong videos:</p>
+                            <ol>
+                                <li>Có thể dễ dàng "tách" 1 phần html ra bằng cách sử dụng partial view. Nếu là html tĩnh thì
+                                    chỉ cần sử dụng
+                                    <code>@Html.Partial("Partial-View-Name")</code>. Nếu partial view đó được sử dụng nhiều lần và nhiều nơi, bạn có thể đặt trong folder
+                                    <code>Shared</code>, các trường hợp còn lại thì có thể đặt ngay trong thư mục view của controller đó.</li>
+                            </ol>
+                            <p class="img-container">
+                                <img src="https://goo.gl/sa5L96" alt="header-partial">
+                            </p>
+                            <p>Partial view đặt trong thư mục riêng chỉ sử dụng trong phạm vi controller đó:</p>
+                            <p class="img-container">
+                                <img src="https://goo.gl/U6vnTs" alt="internal partial view">
+                            </p>
+                            <p>2. Tận dụng sức mạnh của cú pháp razor:</p>
+                            <p class="img-container">
+                                <img src="https://goo.gl/hP3pTB" alt="razor syntax">
+                            </p>
+                            <p>(1): thực hiện 1 vòng lặp như hệt C#. Hãy tưởng tượng bạn có 1 list các sản phẩm, vào bạn có
+                                thể
+                                <code>for</code> hoặc
+                                <code>foreach</code> để in ra danh sách sản phẩm đó. 2 điểm mấu chốt là
+                                <code>@for (...)</code> và cặp dấu
+                                <code>{}</code> để thể hiện phạm vi của vòng lặp.</p>
+                            <p>(2): 1 html helper gọi đến action Detail của ProductController. Sức mạnh của việc sử dụng html
+                                mình cũng đã nói, và sẽ nhắc lại sau này khi sử dụng custom route.</p>
+                            <p>(3): yeah, có thể sử dụng cú pháp
+                                <code>inline</code> để thực hiện các tính toán logic đơn giản.</p>
+                            <p>3. Dễ dàng
+                                <code>override</code> layout bằng cách set
+                                <code>Layout = null</code> và viết riêng 1 layout mới. Bạn có thể xem đây là cách
+                                <code>fake layout</code>, chính vì vậy bạn không cần phải viết
+                                <code>@RenderBody</code> trong fake layout này.</p>
+                            <p class="img-container">
+                                <img src="https://goo.gl/VdeQXx" alt="fake layout">
+                            </p>
+                            <p>Xem clip full HD không che tại đây:</p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLGQv5Xhv0tdq4kNQFqzrA4Z3twSAkrymP"
+                                frameborder="0" allowfullscreen=""></iframe>
+                            <h3>Github repo</h3>
+                            <p>Up-to-date tại
+                                <a href="https://github.com/oclockvn/didongexpress">didongexpress</a>
+                            </p>
+
+                        </div>
+                        <!-- //content -->
+                    </div>
+                </div>
+            </div>
+
         </div>
-        
+
     </div>
 
     <footer class="footer">
@@ -109,7 +241,7 @@
     <script>
         var waypoint = new Waypoint({
             element: document.getElementById('sidebar'),
-            handler: function(direction) {
+            handler: function (direction) {
                 // notify(this.element.id + ' triggers at ' + this.triggerPoint)
                 if (direction === 'down') {
                     $(this.element).addClass('fixed');
