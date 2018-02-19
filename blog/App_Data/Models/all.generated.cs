@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bdb2d24b2ab5f8a8")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d9d774f3e6fda537")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 
 // FILE: models.generated.cs
@@ -40,9 +40,9 @@ using  Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>HomeDocType</summary>
+	/// <summary>Home</summary>
 	[PublishedContentModel("homeDocType")]
-	public partial class HomeDocType : PublishedContentModel
+	public partial class HomeDocType : PublishedContentModel, ISeoDocType
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "homeDocType";
@@ -64,6 +64,259 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Meta Description: Enter the description for page
+		///</summary>
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.SeoDocType.GetMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Meta Keyworks: Enter keywords for post
+		///</summary>
+		[ImplementPropertyType("metaKeyworks")]
+		public string MetaKeyworks
+		{
+			get { return Umbraco.Web.PublishedContentModels.SeoDocType.GetMetaKeyworks(this); }
+		}
+
+		///<summary>
+		/// Hide in navigation: Check this box to hide in navigation bar
+		///</summary>
+		[ImplementPropertyType("umbracoNavihide")]
+		public bool UmbracoNavihide
+		{
+			get { return Umbraco.Web.PublishedContentModels.SeoDocType.GetUmbracoNavihide(this); }
+		}
+	}
+
+	// Mixin content Type 1057 with alias "seoDocType"
+	/// <summary>Seo</summary>
+	public partial interface ISeoDocType : IPublishedContent
+	{
+		/// <summary>Meta Description</summary>
+		string MetaDescription { get; }
+
+		/// <summary>Meta Keyworks</summary>
+		string MetaKeyworks { get; }
+
+		/// <summary>Hide in navigation</summary>
+		bool UmbracoNavihide { get; }
+	}
+
+	/// <summary>Seo</summary>
+	[PublishedContentModel("seoDocType")]
+	public partial class SeoDocType : PublishedContentModel, ISeoDocType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "seoDocType";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public SeoDocType(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SeoDocType, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Meta Description: Enter the description for page
+		///</summary>
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription
+		{
+			get { return GetMetaDescription(this); }
+		}
+
+		/// <summary>Static getter for Meta Description</summary>
+		public static string GetMetaDescription(ISeoDocType that) { return that.GetPropertyValue<string>("metaDescription"); }
+
+		///<summary>
+		/// Meta Keyworks: Enter keywords for post
+		///</summary>
+		[ImplementPropertyType("metaKeyworks")]
+		public string MetaKeyworks
+		{
+			get { return GetMetaKeyworks(this); }
+		}
+
+		/// <summary>Static getter for Meta Keyworks</summary>
+		public static string GetMetaKeyworks(ISeoDocType that) { return that.GetPropertyValue<string>("metaKeyworks"); }
+
+		///<summary>
+		/// Hide in navigation: Check this box to hide in navigation bar
+		///</summary>
+		[ImplementPropertyType("umbracoNavihide")]
+		public bool UmbracoNavihide
+		{
+			get { return GetUmbracoNavihide(this); }
+		}
+
+		/// <summary>Static getter for Hide in navigation</summary>
+		public static bool GetUmbracoNavihide(ISeoDocType that) { return that.GetPropertyValue<bool>("umbracoNavihide"); }
+	}
+
+	/// <summary>Post</summary>
+	[PublishedContentModel("postDocType")]
+	public partial class PostDocType : PublishedContentModel, IPageDocType, ISeoDocType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "postDocType";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public PostDocType(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<PostDocType, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Body text: Enter the post body
+		///</summary>
+		[ImplementPropertyType("bodyText")]
+		public IHtmlString BodyText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("bodyText"); }
+		}
+
+		///<summary>
+		/// Excerpt: Enter short description for post
+		///</summary>
+		[ImplementPropertyType("excerpt")]
+		public string Excerpt
+		{
+			get { return this.GetPropertyValue<string>("excerpt"); }
+		}
+
+		///<summary>
+		/// Page Title: Enter page title
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.PageDocType.GetPageTitle(this); }
+		}
+
+		///<summary>
+		/// Tags: Enter page tags
+		///</summary>
+		[ImplementPropertyType("tags")]
+		public IEnumerable<string> Tags
+		{
+			get { return Umbraco.Web.PublishedContentModels.PageDocType.GetTags(this); }
+		}
+
+		///<summary>
+		/// Meta Description: Enter the description for page
+		///</summary>
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.SeoDocType.GetMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Meta Keyworks: Enter keywords for post
+		///</summary>
+		[ImplementPropertyType("metaKeyworks")]
+		public string MetaKeyworks
+		{
+			get { return Umbraco.Web.PublishedContentModels.SeoDocType.GetMetaKeyworks(this); }
+		}
+
+		///<summary>
+		/// Hide in navigation: Check this box to hide in navigation bar
+		///</summary>
+		[ImplementPropertyType("umbracoNavihide")]
+		public bool UmbracoNavihide
+		{
+			get { return Umbraco.Web.PublishedContentModels.SeoDocType.GetUmbracoNavihide(this); }
+		}
+	}
+
+	// Mixin content Type 1060 with alias "pageDocType"
+	/// <summary>Page</summary>
+	public partial interface IPageDocType : IPublishedContent
+	{
+		/// <summary>Page Title</summary>
+		string PageTitle { get; }
+
+		/// <summary>Tags</summary>
+		IEnumerable<string> Tags { get; }
+	}
+
+	/// <summary>Page</summary>
+	[PublishedContentModel("pageDocType")]
+	public partial class PageDocType : PublishedContentModel, IPageDocType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "pageDocType";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public PageDocType(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<PageDocType, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Page Title: Enter page title
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return GetPageTitle(this); }
+		}
+
+		/// <summary>Static getter for Page Title</summary>
+		public static string GetPageTitle(IPageDocType that) { return that.GetPropertyValue<string>("pageTitle"); }
+
+		///<summary>
+		/// Tags: Enter page tags
+		///</summary>
+		[ImplementPropertyType("tags")]
+		public IEnumerable<string> Tags
+		{
+			get { return GetTags(this); }
+		}
+
+		/// <summary>Static getter for Tags</summary>
+		public static IEnumerable<string> GetTags(IPageDocType that) { return that.GetPropertyValue<IEnumerable<string>>("tags"); }
 	}
 
 	/// <summary>Folder</summary>
