@@ -80,6 +80,8 @@
     <script type="text/javascript" src="~/Scripts/mdb.min.js"></script>
 
     <script src="~/Scripts/noframework.waypoints.min.js"></script>
+    <script src="~/Scripts/timeago.min.js"></script>
+    <script src="~/Scripts/timeago.locales.min.js"></script>
     <script>
         var waypoint = new Waypoint({
             element: document.getElementById('sidebar'),
@@ -92,6 +94,8 @@
                 }
             }
         });
+
+        timeago().render($('.timeago'), 'vi');
     </script>
 </body>
 
