@@ -47,15 +47,8 @@
         <div class="col-md-4 sidebar" id="sidebar">
             <aside class="tag-container widget">
                 <h4 class="widget-title">tags</h4>
-                <div class="tags widget-content">
-                    <a href="#">lorem</a>
-                    <a href="#">dolor</a>
-                    <a href="#">sit</a>
-                    <a href="#">amet</a>
-                    <a href="#">js</a>
-                    <a href="#">css</a>
-                    <a href="#">c#</a>
-                    <a href="#">asp.net mvc</a>
+                <div class="tags widget-content clearfix">
+                    @Html.Action("RenderTags", "SiteLayout")
                 </div>
             </aside>
             <!-- tags -->

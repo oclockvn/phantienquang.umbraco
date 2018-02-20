@@ -23,9 +23,10 @@ $tag_bg_hover: #fff;
         border: none;
         background: $tag_bg;
         padding: 2px 8px;
-        margin: 0 2px 4px 0;
+        margin: 0 4px 4px 0;
         transition: .2s ease-in-out;
         border-radius: 2px;
+        float: left;
 
         &:hover {
             box-shadow: 0 8px 10px -5px rgba(0,0,0,.14), 0 16px 24px 2px rgba(0,0,0,.098), 0 6px 30px 5px rgba(0,0,0,.084);

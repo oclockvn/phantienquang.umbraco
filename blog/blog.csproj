@@ -398,6 +398,7 @@
     <Content Include="Views\Shared\_PreviewPost.cshtml" />
     <Content Include="Views\Post.cshtml" />
     <Content Include="Views\Shared\_DisqusComment.cshtml" />
+    <Content Include="Views\Partials\_Tags.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -434,11 +435,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SiteLayoutController.cs" />
     <Compile Include="Helpers\UrlHelperExtends.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />
     <Compile Include="Models\Seo.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
