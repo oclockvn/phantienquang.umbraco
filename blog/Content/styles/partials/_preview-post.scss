@@ -142,8 +142,8 @@ $paging_size: 32px;
     border-top: 1px solid #eee;
     padding: 32px;
   }
-  
-  .paging {
+
+.paging {
     list-style: none;
     display: flex;
     align-items: center;
@@ -151,7 +151,6 @@ $paging_size: 32px;
 
     a {
         display: block;
-        
         width: $paging_size;
         height: $paging_size;
         line-height: $paging_size;
@@ -163,10 +162,10 @@ $paging_size: 32px;
 
         &:hover {
             box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .3);
-          }
-      }
+        }
+    }
 
-      li {
+    li {
         display: block;
         width: $paging_size;
         height: $paging_size;
@@ -177,6 +176,13 @@ $paging_size: 32px;
 
         + li {
             margin-left: 8px;
-          }
-      }
-  }
+        }
+
+        &.active {
+            a {
+                background: $preview_color_hover;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,11 +1,17 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<HomeViewModel>
+
 @using blog.Models
 @using Our.Umbraco.Ditto
+@using PagedList
+@using PagedList.Mvc
+
+
 @{
     Layout = "Master.cshtml";
 
-    var content = Model.Content.As<HomeViewModel>();
-    var posts = content.Children ?? new List<PreviewPostViewModel>();
+    //var content = Model.Content.As<HomeViewModel>();
+    //var posts = content.Children ?? new List<PreviewPostViewModel>();
+    var posts = Model.Posts;
 }
 
 <!-- homepage -->
@@ -23,14 +29,16 @@
                     }
                 </div>
 
-                <div class="preview-paging">
-                    <ul class="paging">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li>...</li>
-                        <li><a href="#">>></a></li>
-                    </ul>
+                <div>                    
+                    @Html.PagedListPager(
+                         Model.Posts,
+                         page => (Model.Content.UrlAbsolute() + "?page=" + page),
+                         new PagedListRenderOptions
+                         {
+                             UlElementClasses = new[] { "paging" },
+                             Display = PagedListDisplayMode.IfNeeded,
+                             ContainerDivClasses = new [] { "preview-paging" }
+                         })
                 </div>
             </div>
         </div>
@@ -112,5 +120,5 @@
         });
 
         // timeago().render($('.timeago'), 'vi');
-    </script>    
+    </script>
 }

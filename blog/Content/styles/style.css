@@ -365,6 +365,9 @@ img {
     text-align: center; }
     .paging li + li {
       margin-left: 8px; }
+    .paging li.active a {
+      background: #f42;
+      color: #fff; }
 
 .widget {
   margin: 32px; }
