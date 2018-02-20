@@ -9,6 +9,7 @@ namespace blog.Models
         public string PageTitle { get; set; }
         public virtual IEnumerable<string> Tags { get; set; }
         public string Url { get; set; }
+        public bool DisableComment { get; set; }
 
         [UmbracoProperty("CreatorName")]
         public string Author { get; set; }

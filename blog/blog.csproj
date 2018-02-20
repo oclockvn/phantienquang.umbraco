@@ -390,6 +390,7 @@
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Shared\_PreviewPost.cshtml" />
     <Content Include="Views\Post.cshtml" />
+    <Content Include="Views\Shared\_DisqusComment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -425,6 +426,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\UrlHelperExtends.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />

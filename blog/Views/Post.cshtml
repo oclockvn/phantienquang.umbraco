@@ -1,5 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using blog.Models
+@using blog.Helpers
 @using Our.Umbraco.Ditto
 
 @{
@@ -34,6 +35,13 @@
                     @Html.Raw(content.BodyText)
                 </div>
                 <!-- //content -->
+
+                <div class="page__comment">
+                    @if (baseInfo.DisableComment == false)
+                    {
+                        @Html.Partial("_DisqusComment")
+                    }
+                </div>
             </div>
         </div>
     </div>
