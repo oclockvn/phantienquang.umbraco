@@ -8,6 +8,8 @@
 
     var content = Model.Content.As<PostViewModel>();
     var baseInfo = content.BaseInfo;
+
+    ViewBag.Title = Model.Content.Name;
 }
 
 <!-- post -->
