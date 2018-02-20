@@ -517,4 +517,8 @@ img {
 .page__content blockquote p {
   font-size: 1em; }
 
+.page__comment-container {
+  border-top: 1px solid #eee;
+  padding: 32px 0; }
+
 /*# sourceMappingURL=style.css.map */

@@ -35,16 +35,25 @@
                     @Html.Raw(content.BodyText)
                 </div>
                 <!-- //content -->
-
-                <div class="page__comment">
-                    @if (baseInfo.DisableComment == false)
-                    {
-                        @Html.Partial("_DisqusComment")
-                    }
-                </div>
             </div>
         </div>
     </div>
+
+    @if (baseInfo.DisableComment == false)
+    {
+        <div class="page__comment-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="page__content">
+                            @Html.Partial("_DisqusComment")
+                        </div>
+                        <!-- //content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 
 </div>
 
