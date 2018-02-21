@@ -26,8 +26,7 @@ namespace blog.Models
         [CurrentContentAs]
         public BaseViewModel BaseInfo { get; set; }
         
-        //public virtual IEnumerable<string> Tags { get; set; }
-        //public string Title { get; set; }
+        public int ViewCount { get; set; }
         public string Excerpt { get; set; }
     }
 }

@@ -399,6 +399,7 @@
     <Content Include="Views\Post.cshtml" />
     <Content Include="Views\Shared\_DisqusComment.cshtml" />
     <Content Include="Views\Partials\_Tags.cshtml" />
+    <Content Include="Views\Partials\_PopularPosts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -439,6 +440,7 @@
     <Compile Include="Controllers\SiteLayoutController.cs" />
     <Compile Include="Events\PostEvent.cs" />
     <Compile Include="Helpers\UrlHelperExtends.cs" />
+    <Compile Include="Models\Alias.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />

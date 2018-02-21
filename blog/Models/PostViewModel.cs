@@ -11,6 +11,6 @@ namespace blog.Models
         public Seo SeoInfo { get; set; }
 
         public string BodyText { get; set; }
-        public int ViewCound { get; set; }
+        public int ViewCount { get; set; }
     }
 }

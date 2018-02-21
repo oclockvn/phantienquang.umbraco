@@ -15,20 +15,8 @@
                 <a href="@baseInfo.Url" title="@Model.BaseInfo.PageTitle">@Model.BaseInfo.PageTitle</a>
             </h3>
             <div class="preview-meta">
-                @*<div class="align-items-center mr- no-gutters row writer">
-                    <a href="#">
-                        <img src="img/user.png" alt="@baseInfo.Author" class="mr-">
-                    </a>
-                    <span class="mr-">by</span>
-                    <a href="#">
-                        <span>@baseInfo.Author</span>
-                    </a>
-                </div>
-                <div class="published">
-                    <span>—</span>
-                    <time datetime="@baseInfo.CreatedDate" class="timeago"></time>
-                </div>*@
                 @ViewHelpers.RenderPostMeta(baseInfo)
+                <span class="ml- view-count">— @Model.ViewCount lượt xem</span>
             </div>
         </div>
         <div class="col-md-6 preview-right align-self-center">

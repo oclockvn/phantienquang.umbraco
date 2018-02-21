@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
+﻿using blog.Models;
 using Umbraco.Core;
-using Umbraco.Core.Models;
 using Umbraco.Core.Services;
-using Umbraco.Web;
 
 namespace blog.Services
 {
@@ -18,22 +12,22 @@ namespace blog.Services
 
     public class PostService : IPostService
     {
-        private readonly IContentService contentService;
+        private readonly IContentService _contentService;
 
         public PostService(IContentService contentService)
         {
-            this.contentService = contentService;
+            _contentService = contentService;
         }
 
         // public void UpdateViewCount(Guid nodeKey, int count)
         public void UpdateViewCount(int nodeId)
         {
-            var service = contentService; // ApplicationContext.Current.Services.ContentService;
+            var service = _contentService; // ApplicationContext.Current.Services.ContentService;
             var content = service.GetById(nodeId);
 
-            var viewCount = content.GetValue<int>("viewCount");
-            content.SetValue("viewCount", viewCount + 1);
-            service.Save(content);
+            var viewCount = content.GetValue<int>(Alias.ViewCount);
+            content.SetValue(Alias.ViewCount, viewCount + 1);
+            service.SaveAndPublishWithStatus(content);
 
             service.DisposeIfDisposable();
         }
