@@ -21,15 +21,8 @@
 
     <title>@ViewBag.Title — Phan Tien Quang</title>
     <link rel="icon" href="@Url.Content("~/favicon.png")" type="image/png" sizes="16x16" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
-    <link href="~/Content/mdb.min.css" rel="stylesheet">
-
-    <link href="~/Content/style.css" rel="stylesheet">
-    <link href="~/Content/lumx.css" rel="stylesheet">
-    <link href="~/Content/styles/common.css" rel="stylesheet">
-    <link href="~/Content/styles/style.css" rel="stylesheet">
-
+    
+    @System.Web.Optimization.Styles.Render("~/bundles/css")
 </head>
 
 <body>
@@ -90,29 +83,9 @@
 
     @Html.Partial("_Footer")
 
-    <!-- SCRIPTS -->
-    <script type="text/javascript" src="~/Scripts/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/popper.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/mdb.min.js"></script>
+    @System.Web.Optimization.Scripts.Render("~/bundles/js")
 
-    <script src="~/Scripts/noframework.waypoints.min.js"></script>
-    <script src="~/Scripts/timeago.min.js"></script>
-    <script src="~/Scripts/timeago.locales.min.js"></script>
-
-    <script>
-        //var waypoint = new Waypoint({
-        //    element: document.getElementById('sidebar'),
-        //    handler: function(direction) {
-        //        // notify(this.element.id + ' triggers at ' + this.triggerPoint)
-        //        if (direction === 'down') {
-        //            $(this.element).addClass('fixed');
-        //        } else {
-        //            $(this.element).removeClass('fixed');
-        //        }
-        //    }
-        //});
-
+    <script>        
         timeago().render($('.timeago'), 'vi');
     </script>
 
