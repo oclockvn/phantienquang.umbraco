@@ -282,6 +282,7 @@
     <Content Include="Content\style.css" />
     <Content Include="Content\styles\common.css" />
     <Content Include="Content\styles\style.css" />
+    <Content Include="favicon.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="img\bg.jpg" />
     <Content Include="img\lightbox\default-skin.png" />
