@@ -12,5 +12,7 @@ namespace blog.Models
 
         public string BodyText { get; set; }
         public int ViewCount { get; set; }
+
+        public bool DisabledFacebookPlugins { get; set; }
     }
 }

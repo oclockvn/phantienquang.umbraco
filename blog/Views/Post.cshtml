@@ -24,6 +24,13 @@
                 <div class="preview-meta row align-items-center no-gutters">
                     @ViewHelpers.RenderPostMeta(baseInfo)
                     <span class="ml- view-count">— @(content.ViewCount + 1) lượt xem</span>
+
+                    @if (content.DisabledFacebookPlugins == false)
+                    {
+                        <div class="col justify-content-end no-gutters page-fbplugins row">
+                            @Html.Partial("_FbPlugins", Model.Content.UrlAbsolute())
+                        </div>
+                    }
                 </div>
             </div>
             <!-- //header -->
@@ -38,6 +45,7 @@
                     @Html.Raw(content.BodyText)
                 </div>
                 <!-- //content -->
+                
             </div>
         </div>
     </div>

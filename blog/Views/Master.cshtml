@@ -1,4 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@using blog.Models
+
 @{
     Layout = null;
 }
@@ -26,6 +29,20 @@
 </head>
 
 <body>
+
+    @if (Model.Content.HasProperty(Alias.DisabledFacebookPlugins) && Model.Content.GetPropertyValue<bool>(Alias.DisabledFacebookPlugins) == false)
+    {
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1771979199778165&autoLogAppEvents=1';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+    }
 
     <div class="introduction">
         <div class="inner">
@@ -70,13 +87,9 @@
     @Html.Partial("_Footer")
 
     <!-- SCRIPTS -->
-    <!-- JQuery -->
     <script type="text/javascript" src="~/Scripts/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="~/Scripts/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
     <script type="text/javascript" src="~/Scripts/mdb.min.js"></script>
 
     <script src="~/Scripts/noframework.waypoints.min.js"></script>

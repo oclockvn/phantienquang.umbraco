@@ -400,6 +400,7 @@
     <Content Include="Views\Shared\_DisqusComment.cshtml" />
     <Content Include="Views\Partials\_Tags.cshtml" />
     <Content Include="Views\Partials\_PopularPosts.cshtml" />
+    <Content Include="Views\Shared\_FbPlugins.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
