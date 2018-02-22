@@ -452,7 +452,8 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  background-position: center top; }
   .introduction:before {
     content: '';
     display: block;
