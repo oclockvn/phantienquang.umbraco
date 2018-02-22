@@ -14,7 +14,7 @@
 
 <!-- post -->
 <div class="post-container">
-    <div class="container post-header-container preview">
+    <header class="container post-header-container preview">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="preview-tags">
@@ -35,15 +35,15 @@
             </div>
             <!-- //header -->
         </div>
-    </div>
+    </header>
 
 
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <div class="page__content">
+                <article class="page__content">
                     @Html.Raw(content.BodyText)
-                </div>
+                </article>
                 <!-- //content -->
                 
             </div>
@@ -52,7 +52,7 @@
 
     @if (baseInfo.DisableComment == false)
     {
-        <div class="page__comment-container">
+        <section class="page__comment-container">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     }
 
 </div>

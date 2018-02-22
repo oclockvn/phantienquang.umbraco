@@ -1,11 +1,10 @@
-﻿using blog.Models;
+﻿using blog.Helpers;
+using blog.Models;
+using Our.Umbraco.Ditto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using AutoMapper.Internal;
-using Our.Umbraco.Ditto;
 using Umbraco.Core;
 using Umbraco.Web;
 using Umbraco.Web.Mvc;
@@ -19,6 +18,32 @@ namespace blog.Controllers
         private const string POPULAR_POST_KEY = "POPULAR POSTS";
         private const string TAG_GROUP = "default";
         
+        public ActionResult RenderMeta()
+        {   
+            var absUrl = CurrentPage.UrlAbsolute();
+            var isHomepage = CurrentPage.IsDocumentType(Alias.HomeDocType);
+
+            var meta = new MetaViewModel
+            {
+                IsHomepage = isHomepage,
+                Author = CurrentPage.WriterName,
+                Canonical = CurrentPage.GetCanonicalUrl(),
+                Description = CurrentPage.GetPropertyValue<string>(Alias.Description),
+                Keywords = CurrentPage.GetPropertyValue<string>(Alias.Keywords),
+                OriginalSource = absUrl,
+                PageDescription = isHomepage ? "Simple man. Simple code. Simple life." : CurrentPage.GetPropertyValue<string>(Alias.PageDescription),
+                PageTitle = CurrentPage.GetPropertyValue<string>(Alias.PageTitle),
+                ModifiedTime = new DateTimeOffset(CurrentPage.UpdateDate),
+                PublishedTime = new DateTimeOffset(CurrentPage.CreateDate),
+                ShortLink = absUrl, // todo: generate short link
+                Url = absUrl,
+                UrlFeed = absUrl, // todo: generate feed
+                UrlNext = null // todo: get next page
+            };
+
+            return PartialView(PARTIALS_DIR + "_Meta.cshtml", meta);
+        }
+
         public ActionResult RenderTags()
         {
             var blogTags = ApplicationContext.ApplicationCache.RuntimeCache

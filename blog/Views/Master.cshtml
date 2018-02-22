@@ -17,10 +17,12 @@
 
     <meta name="referrer" content="unsafe-url">
     <meta name="apple-mobile-web-app-title" content="PTQ">
-    <meta name="msvalidate.01" content="EBA9DC0DD4E376AF9708F73323680AB1">
+    <meta name="msvalidate.01" content="">
 
     <title>@ViewBag.Title — Phan Tien Quang</title>
     <link rel="icon" href="@Url.Content("~/favicon.png")" type="image/png" sizes="16x16" />
+
+    @Html.Action("RenderMeta", "SiteLayout")
     
     @System.Web.Optimization.Styles.Render("~/bundles/css")
 </head>
@@ -35,7 +37,7 @@
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
                 js = d.createElement(s); js.id = id;
-                js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1771979199778165&autoLogAppEvents=1';
+                js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=@(blog.GlobalConstant.FbAppId)&autoLogAppEvents=1';
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         </script>
