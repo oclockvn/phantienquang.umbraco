@@ -57,6 +57,9 @@
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
                         <div class="comment__content">
+
+                            <button class="render-disqus btn btn-elegant btn-block" type="button">Xem bình luận</button>
+
                             @Html.Partial("_DisqusComment")
                         </div>
                         <!-- //content -->
@@ -74,6 +77,13 @@
         (function () {
             var images = document.querySelectorAll('.page__content img');
             lazyload(images);
+
+            $(document).on('click', '.render-disqus', function (e) {
+                e.preventDefault();
+                $(this).remove();
+
+                renderDisqus();
+            });
         })();
     </script>
 }

@@ -16,15 +16,15 @@
     var disqus_config = function () {
         this.page.url = '@Model.Content.GetCanonicalUrl()';        
         this.page.identifier = '@Model.Content.Id';
-    };
-    
+    };    
 
-    (function() {
+    function renderDisqus() {
         var d = document, s = d.createElement('script');
         s.src = 'https://phantienquang.disqus.com/embed.js';
+        s.async = true;
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
-    })();
+    } 
 </script>
 <noscript>
     Please enable JavaScript to view the
