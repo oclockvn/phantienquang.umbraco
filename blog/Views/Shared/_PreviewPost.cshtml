@@ -16,8 +16,11 @@
             </h4>
             <div class="preview-meta">
                 @ViewHelpers.RenderPostMeta(baseInfo)
-                <span class="ml- view-count">— @Model.ViewCount lượt xem</span>
+                <span class="ml- view-count d-none d-sm-block">— @Model.ViewCount lượt xem</span>
             </div>
+        </div>
+        <div class="d-block d-sm-none">
+            <span class="view-count col">— @Model.ViewCount lượt xem</span>
         </div>
         <div class="col-md-6 preview-right align-self-center">
             <!-- <a href="#" class="readmore">read more</a> -->
