@@ -22,6 +22,8 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+**/Logs/
+**/App_Data/*.config
 
 # Visual Studio 2015 cache/options directory
 .vs/
