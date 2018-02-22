@@ -208,6 +208,10 @@ img {
 
 .preview-container {
   border-right: 1px solid #eee; }
+  @media screen and (max-width: 768px) {
+    .preview-container {
+      border-right: none;
+      border-bottom: 1px solid #eee; } }
 
 .preview {
   padding-top: 32px;

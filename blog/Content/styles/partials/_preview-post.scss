@@ -1,3 +1,5 @@
+$sm: 768px;
+
 $preview_color_border: #eee;
 $preview_color_text: #aaa;
 $readmore_transfrom: 32px;
@@ -6,6 +8,11 @@ $paging_size: 32px;
 
 .preview-container {
     border-right: 1px solid $preview_color_border;
+
+    @media screen and (max-width: $sm) {
+        border-right: none;
+        border-bottom: 1px solid $preview_color_border;
+    }
 }
 
 .preview {
