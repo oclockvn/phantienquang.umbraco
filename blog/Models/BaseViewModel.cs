@@ -1,4 +1,5 @@
-﻿using Our.Umbraco.Ditto;
+﻿using blog.Processors;
+using Our.Umbraco.Ditto;
 using System.Collections.Generic;
 using Umbraco.Web.Models;
 
@@ -13,10 +14,11 @@ namespace blog.Models
 
         [UmbracoProperty("CreatorName")]
         public string Author { get; set; }
+        
+        //[AuthorAvatarProcessor]
+        //public string AuthorAvatar { get; set; }
 
         [UmbracoProperty("CreateDate")]
         public string CreatedDate { get; set; }
-
-        // todo: get author avatar
     }
 }
