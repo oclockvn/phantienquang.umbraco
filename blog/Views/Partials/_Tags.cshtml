@@ -1,6 +1,14 @@
 ﻿@model IEnumerable<blog.Models.Tag>
 
-@foreach (var tag in Model)
+@if (Model != null && Model.Any())
 {
-    <a href="#" class="size-@tag.Size">@tag.Text — @tag.Count</a>
+    foreach (var tag in Model)
+    {
+        <a href="#" class="size-@tag.Size">@tag.Text — @tag.Count</a>
+    }
 }
+else
+{
+    <a href="#">none</a>
+}
+
