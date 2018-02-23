@@ -407,6 +407,7 @@
     <Content Include="Views\Partials\_PopularPosts.cshtml" />
     <Content Include="Views\Shared\_FbPlugins.cshtml" />
     <Content Include="Views\Partials\_Meta.cshtml" />
+    <Content Include="Views\Setting.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -457,6 +458,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeDocTypeController.cs" />
     <Compile Include="Controllers\PostDocTypeController.cs" />
+    <Compile Include="Controllers\SettingDocTypeController.cs" />
     <Compile Include="Controllers\SiteLayoutController.cs" />
     <Compile Include="Events\PostEvent.cs" />
     <Compile Include="Global.asax.cs">

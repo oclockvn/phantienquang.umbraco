@@ -1,0 +1,37 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Master.cshtml";
+
+    ViewBag.Title = "Setting";
+}
+
+<div class="container mt++">
+    <div class="row">
+        <div class="col-4">
+            @using (Html.BeginForm("ClearCache", "SettingDocType", FormMethod.Post, new { }))
+            {
+                <div class="form-group">
+                    <label>Code</label>
+                    <input name="code" placeholder="Enter security code" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Cache type</label>
+                    <select class="form-control" name="key">
+                        <option value="POST_TAGS">tags</option>
+                        <option value="POPULAR POSTS">popular post</option>
+                        <option value="all">All</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default mh0">Clear Cache</button>
+                </div>
+            }
+        </div>
+    </div>
+    
+</div>
+
+
+
