@@ -1,0 +1,27 @@
+﻿@helper RenderTags(IEnumerable<string> tags)
+    {
+        if (tags != null && tags.Any())
+        {
+            foreach (var tag in tags)
+            {
+                <a href="#"><i>#</i>@tag</a>
+            }
+        }
+}
+
+@helper RenderPostMeta(blog.Models.BaseViewModel baseInfo)
+{
+    <div class="align-items-center mr- no-gutters row writer">
+        @*<a href="#">
+            <img src="/img/user.png" alt="@baseInfo.Author" class="mr-">
+        </a>*@
+        <span class="mr-">by</span>
+        <a href="#" data-event-category="Article" data-event-action="Author - @baseInfo.Author" data-event-label="Profile" data-event-non-interaction="true">
+            <span>@baseInfo.Author</span>
+        </a>
+    </div>
+    <div class="published">
+        <span>—</span>
+        <time datetime="@baseInfo.CreatedDate" class="timeago"></time>
+    </div>
+}

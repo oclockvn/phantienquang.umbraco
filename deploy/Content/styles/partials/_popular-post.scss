@@ -1,0 +1,49 @@
+$counter_size: 32px;
+
+.popular-posts {
+    counter-reset: pp;
+}
+
+.popular-post {
+    padding-left: 40px;
+    position: relative;
+
+    a {
+        color: #000;
+        font-size: 1rem;
+
+        &:hover {
+            color: #f42;
+          }
+      }
+
+      + .popular-post {
+        margin-top: 16px;
+      }
+
+      .pp-meta {
+        font-size: .9em;
+        color: #aaa;
+      }
+      
+      .pp-title {
+        margin-bottom: 4px;
+      }
+
+      &:before {
+        counter-increment: pp;
+        content: counter(pp);
+        width: $counter_size;
+        height: $counter_size;
+        line-height: $counter_size;
+        display: block;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #efefef;
+        color: #000;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+      }
+}

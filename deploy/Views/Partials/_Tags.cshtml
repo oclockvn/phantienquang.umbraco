@@ -1,0 +1,6 @@
+﻿@model IEnumerable<blog.Models.Tag>
+
+@foreach (var tag in Model)
+{
+    <a href="#" class="size-@tag.Size">@tag.Text — @tag.Count</a>
+}

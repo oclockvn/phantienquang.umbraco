@@ -1,0 +1,35 @@
+.introduction {
+    height: 500px;
+    background: rgba(0,0,0,.6) url('../../img/bg.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    background-position: center top;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255,255,255,.6);
+        background: rgba(0,0,0,.6);
+        z-index: -1;
+    }
+
+    .inner, .inner h2 {
+        font-size: 1.5em;
+        text-align: center;
+        color: #fff;
+    }
+
+    .inner h2 {
+        font-weight: 600;
+        font-size: 2em;
+    }
+}

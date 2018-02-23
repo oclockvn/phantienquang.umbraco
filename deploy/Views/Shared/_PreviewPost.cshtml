@@ -1,0 +1,34 @@
+﻿@using blog.Models
+@model PreviewPostViewModel
+
+@{ 
+    var baseInfo = Model.BaseInfo;
+}
+
+<div class="preview container-fluid">
+    <div class="row max-size">
+        <div class="col-md-6 preview-left">
+            <div class="preview-tags">
+                @ViewHelpers.RenderTags(baseInfo.Tags)
+            </div>
+            <h4 class="preview-title">
+                <a href="@baseInfo.Url" title="@Model.BaseInfo.PageTitle">@Model.BaseInfo.PageTitle</a>
+            </h4>
+            <div class="preview-meta">
+                @ViewHelpers.RenderPostMeta(baseInfo)
+                <span class="ml- view-count d-none d-sm-block">— @Model.ViewCount lượt xem</span>
+            </div>
+        </div>
+        <div class="d-block d-sm-none">
+            <span class="view-count col">— @Model.ViewCount lượt xem</span>
+        </div>
+        <div class="col-md-6 preview-right align-self-center">
+            <!-- <a href="#" class="readmore">read more</a> -->
+            <p class="excerpt">
+                @Model.Excerpt
+                <a href="@baseInfo.Url" class="ml" title="read more">[...]</a>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- /preview container-fluid -->

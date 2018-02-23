@@ -1,0 +1,195 @@
+$sm: 768px;
+
+$preview_color_border: #eee;
+$preview_color_text: #aaa;
+$readmore_transfrom: 32px;
+$preview_color_hover: #f42;
+$paging_size: 32px;
+
+.preview-container {
+    border-right: 1px solid $preview_color_border;
+
+    @media screen and (max-width: $sm) {
+        border-right: none;
+        border-bottom: 1px solid $preview_color_border;
+    }
+}
+
+.preview {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    + .preview {
+        border-top: 1px solid $preview_color_border;
+    }
+
+    .preview-title {
+        font-weight: 600;
+
+        a {
+            color: #000;
+        }
+    }
+    // title
+
+    .preview-meta {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+        color: $preview_color_text;
+    }
+    // meta
+
+    .writer {
+        img {
+            max-width: 32px;
+        }
+    
+        a {
+            display: flex;
+            align-items: center;
+            color: $preview_color_text;
+        }    
+    }
+    // author
+
+    .preview-tags {
+        a {
+            display: inline-block;
+            color: $preview_color_text;
+    
+            + a {
+                margin-left: 4px;
+            }
+        }
+    }
+    // tags
+
+    .preview-right {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        .excerpt {
+            flex: 1;
+            transition: .25s linear;
+        }
+        
+        /*
+        .readmore {
+            white-space: nowrap;
+            display: block;
+            color: #000;
+            border: 2px solid #000;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transform: translateX(-$readmore_transfrom);
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            transition: .5s linear;
+            background: #fff;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: #000;
+                transition: .5s ease-in-out;
+                transform: scale(0, 1);
+                transform-origin: left;
+                z-index: -1;
+            }
+
+            &:hover {
+                color: #fff;    
+
+                &:after {
+                    transform: scale(1, 1);
+                }
+            }
+        }
+        */
+    }
+
+    a {
+        color: $preview_color_text;
+
+        &:hover {
+            color: $preview_color_hover;
+        }
+    }
+
+    /*
+    &:hover {
+        .readmore {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .excerpt {
+            transform: translateX($readmore_transfrom);
+            color: $preview_color_text;
+            opacity: .3;
+        }
+    }
+    */
+}
+
+.preview-paging {
+    border-top: 1px solid #eee;
+    padding: 32px;
+  }
+
+.paging {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        display: block;
+        width: $paging_size;
+        height: $paging_size;
+        line-height: $paging_size;
+        text-align: center;
+        background: #efefef;
+        color: #000;
+        border-radius: 2px;
+        transition: .25s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .3);
+        }
+    }
+
+    li {
+        display: block;
+        width: $paging_size;
+        height: $paging_size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        + li {
+            margin-left: 8px;
+        }
+
+        &.active {
+            a {
+                background: $preview_color_hover;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+﻿@using blog.Models
+@model IEnumerable<PreviewPostViewModel>
+
+
+@foreach(var post in Model)
+{
+    <div class="popular-post">
+        <h5 class="pp-title">
+            <a href="@post.BaseInfo.Url">@post.BaseInfo.PageTitle</a>
+        </h5>
+        <div class="pp-meta row no-gutters">
+            <span class="col">
+                <time datetime="@post.BaseInfo.CreatedDate" class="timeago"></time>
+                <span class="ml- view-count">— @post.ViewCount lượt xem</span>
+            </span>
+        </div>
+    </div>
+}

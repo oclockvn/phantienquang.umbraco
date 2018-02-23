@@ -1,0 +1,86 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@using blog.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="referrer" content="unsafe-url">
+    <meta name="apple-mobile-web-app-title" content="PTQ">
+    <meta name="msvalidate.01" content="">
+
+    <title>@ViewBag.Title — Phan Tien Quang</title>
+    <link rel="icon" href="@Url.Content("~/favicon.png")" type="image/png" sizes="16x16" />
+
+    @Html.Action("RenderMeta", "SiteLayout")
+    
+    @System.Web.Optimization.Styles.Render("~/bundles/css")
+</head>
+
+<body>
+
+    @if (Model.Content.HasProperty(Alias.DisabledFacebookPlugins) && Model.Content.GetPropertyValue<bool>(Alias.DisabledFacebookPlugins) == false)
+    {
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=@(blog.GlobalConstant.FbAppId)&autoLogAppEvents=1';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+    }
+
+    <div class="introduction">
+        <div class="inner">
+            <h2>Phan Tiến Quang</h2>
+            <div>Simple man. Simple code. Simple life.</div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-container max-size">
+                <div class="brand">
+                    <a href="/" title="yeah! it's me">/Quang</a>
+                </div>
+                <nav class="nav">
+                    <ul class="menu">
+                        <li><a href="!#">love</a></li>
+                        <li><a href="!#">movies</a></li>
+                        <li><a href="!#">cv</a></li>
+                        <li><a href="!#">services</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        @RenderBody()
+    </div>
+
+    @Html.Partial("_Footer")
+
+    @System.Web.Optimization.Scripts.Render("~/bundles/js")
+
+    <script>        
+        timeago().render($('.timeago'), 'vi');
+    </script>
+
+    @RenderSection("scripts", false)
+</body>
+
+</html>
