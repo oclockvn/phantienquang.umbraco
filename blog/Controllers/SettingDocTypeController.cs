@@ -12,13 +12,15 @@ namespace blog.Controllers
             if (string.IsNullOrWhiteSpace(code) == false && code == "1010") // :))
             {
                 if (key == "all")
-                    ApplicationContext.ApplicationCache.RuntimeCache.ClearAllCache();
+                {
+                    ApplicationContext.ApplicationCache.RuntimeCache.ClearCacheItem(GlobalConstant.TagCacheKey);
+                    ApplicationContext.ApplicationCache.RuntimeCache.ClearCacheItem(GlobalConstant.PopularPostCacheKey);
+                }                    
                 else if (string.IsNullOrWhiteSpace(key) == false)
                     ApplicationContext.ApplicationCache.RuntimeCache.ClearCacheItem(key);
             }
 
             return Redirect("~");
-            return RedirectToCurrentUmbracoPage();
         }
     }
 }

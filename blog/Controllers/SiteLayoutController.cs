@@ -14,8 +14,8 @@ namespace blog.Controllers
     public class SiteLayoutController : SurfaceController
     {
         private const string PARTIALS_DIR = "~/Views/Partials/";
-        private const string TAG_KEY = "POST_TAGS";
-        private const string POPULAR_POST_KEY = "POPULAR POSTS";
+        private const string TAG_KEY = GlobalConstant.TagCacheKey;
+        private const string POPULAR_POST_KEY = GlobalConstant.PopularPostCacheKey;
         private const string TAG_GROUP = "default";
         
         public ActionResult RenderMeta()
