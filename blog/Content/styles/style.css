@@ -492,6 +492,10 @@ img {
   .page__content h3:before {
     content: '#';
     color: #f42; }
+.page__content h4 {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin: 1em 0 .5em; }
 .page__content ul, .page__content ol {
   margin: 0 0 1.25em 2.5em; }
 .page__content code {
@@ -501,9 +505,27 @@ img {
   background-color: #f9f2f4;
   border-radius: 4px; }
 .page__content pre {
+  display: block;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 4px;
   padding: 16px;
   margin: 1em 0;
-  background: #eee; }
+  background: #eee;
+  padding: .66001rem 9.5px 9.5px;
+  line-height: 2rem;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(0.75rem, #fff), color-stop(0.75rem, #f5f7fa), color-stop(2.75rem, #f5f7fa), color-stop(2.75rem, #fff), color-stop(4rem, #fff));
+  background: linear-gradient(to bottom, #fff 0, #fff 0.75rem, #f5f7fa 0.75rem, #f5f7fa 2.75rem, #fff 2.75rem, #fff 4rem);
+  background-size: 100% 4rem;
+  border: 1px solid #eee;
+  border-color: #D3DAEA; }
+  .page__content pre code {
+    padding: 0;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0; }
 .page__content img {
   display: block;
   margin: auto;
