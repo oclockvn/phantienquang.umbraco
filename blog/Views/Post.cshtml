@@ -78,6 +78,12 @@
             var images = document.querySelectorAll('.page__content img');
             lazyload(images);
 
+            //$(document).ready(function () {
+            //    $('.page__content img').Lazy({
+            //        delay: 1000
+            //    });
+            //});
+
             $(document).on('click', '.render-disqus', function (e) {
                 e.preventDefault();
                 $(this).remove();

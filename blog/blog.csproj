@@ -303,6 +303,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Code\ViewHelpers.cshtml" />
+    <Content Include="Scripts\jquery.lazy.min.js" />
+    <Content Include="Scripts\jquery.lazy.script.min.js" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />

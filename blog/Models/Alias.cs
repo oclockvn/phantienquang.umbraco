@@ -12,5 +12,7 @@
 
         public static string PageDescription = "excerpt";
         public static string PageTitle = "pageTitle";
+
+        public static string BodyText = "bodyText";
     }
 }
