@@ -411,6 +411,7 @@
     <Content Include="Views\Shared\_FbPlugins.cshtml" />
     <Content Include="Views\Partials\_Meta.cshtml" />
     <Content Include="Views\Setting.cshtml" />
+    <Content Include="Views\PageNotFound.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

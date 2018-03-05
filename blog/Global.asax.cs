@@ -1,13 +1,8 @@
-﻿using System;
+﻿using blog.Models;
+using System.Text.RegularExpressions;
 using System.Web.Optimization;
 using Umbraco.Core;
 using Umbraco.Web;
-using Umbraco.Web.Models;
-using Umbraco.Core.Models;
-using System.Linq;
-using umbraco.cms.businesslogic.web;
-using blog.Models;
-using System.Text.RegularExpressions;
 
 namespace blog
 {
@@ -48,7 +43,8 @@ namespace blog
             {
                 if (entity.HasProperty(Alias.BodyText))
                 {
-                    const string img = "<img alt='$1' data-src='$2' src='data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs='>";
+                    // replace markdown image by figure tag, using data-src for lazy loading
+                    const string img = "<figure><img alt='$1' data-src='$2' src='data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs='><figcaption>$1</figcaption></figure>";
                     const string pattern = @"!\[(.*)\]\((.*)\)"; // ![image alt](http://path/to/img)
 
                     var body = entity.GetValue<string>(Alias.BodyText);
