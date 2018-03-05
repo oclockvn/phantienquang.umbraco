@@ -492,6 +492,10 @@ img {
   .page__content h3:before {
     content: '#';
     color: #f42; }
+.page__content h4 {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin: 1em 0 .5em; }
 .page__content ul, .page__content ol {
   margin: 0 0 1.25em 2.5em; }
 .page__content code {
@@ -501,27 +505,51 @@ img {
   background-color: #f9f2f4;
   border-radius: 4px; }
 .page__content pre {
+  display: block;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 4px;
   padding: 16px;
   margin: 1em 0;
-  background: #eee; }
+  background: #eee;
+  padding: .66001rem 9.5px 9.5px;
+  line-height: 2rem;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(0.75rem, #fff), color-stop(0.75rem, #f5f7fa), color-stop(2.75rem, #f5f7fa), color-stop(2.75rem, #fff), color-stop(4rem, #fff));
+  background: linear-gradient(to bottom, #fff 0, #fff 0.75rem, #f5f7fa 0.75rem, #f5f7fa 2.75rem, #fff 2.75rem, #fff 4rem);
+  background-size: 100% 4rem;
+  border: 1px solid #eee;
+  border-color: #D3DAEA; }
+  .page__content pre code {
+    padding: 0;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0; }
 .page__content img {
   display: block;
   margin: auto;
   max-width: 100%;
-  border: 1px solid #eee;
-  padding: 4px;
-  background: #eee;
-  border-radius: 3px;
-  -webkit-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
   -o-object-fit: cover;
-     object-fit: cover; }
+     object-fit: cover;
+  /*&:hover {
+      box-shadow: 0 3px 9px 0 rgba(0,0,0,.3);
+  }*/ }
   .page__content img[src*='data:image/gif;base64'] {
     width: 640px;
     height: 320px; }
-  .page__content img:hover {
-    -webkit-box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.3);
-            box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.3); }
+.page__content figure {
+  border: 1px dashed #eee;
+  text-align: center;
+  display: block;
+  background: #fafafa;
+  padding: 8px 8px 0;
+  -webkit-transition: .6s ease-in-out;
+  transition: .6s ease-in-out; }
+  .page__content figure figcaption {
+    padding: 4px 0; }
+  .page__content figure:hover {
+    background: #ddd; }
 .page__content blockquote p {
   font-size: 1em; }
 

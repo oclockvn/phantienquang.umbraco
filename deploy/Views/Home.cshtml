@@ -19,8 +19,8 @@
 <!-- homepage -->
 <div class="flex-container homepage-container">
     <div class="row no-gutters">
-        <div class="col-md-8">
-            <div class="preview-container">
+        <div class="col-md-8 preview-container">
+            <div class="preview-container-inner">
                 <div class="previews">
                     @if (posts.Any())
                     {
@@ -58,7 +58,7 @@
             <aside class="popular-post-container widget">
                 <h4 class="widget-title">popular posts</h4>
                 <div class="widget-content popular-posts">
-                    @Html.Action("RenderPopularPost", "SiteLayout");
+                    @Html.Action("RenderPopularPost", "SiteLayout")
                 </div>
             </aside>
         </div>
